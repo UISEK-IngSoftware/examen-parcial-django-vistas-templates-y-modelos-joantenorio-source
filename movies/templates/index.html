@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Películas</title>
+
+    <style>
+        body{
+            font-family: Arial;
+        }
+
+        .container{
+            width: 70%;
+            margin: auto;
+        }
+
+        .card{
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        a{
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Catálogo de Películas</h1>
+
+        {% for movie in movies %}
+            <div class="card">
+                <a href="{% url 'detalle' movie.id %}">
+                    {{ movie.title }}
+                </a>
+                <p>Año: {{ movie.year }}</p>
+            </div>
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>
